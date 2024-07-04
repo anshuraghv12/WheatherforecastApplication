@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include Tailwind CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Include your script.js if it's not dependent on Node.js modules -->
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-blue-100">
+    <div class="max-w-5xl mx-auto p-4">
+        <header class="bg-blue-500 text-white text-center p-4 rounded-lg">
+            <h1 class="text-3xl font-bold">Weather Dashboard</h1>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div class="p-4 bg-white rounded-lg shadow-lg">
+                <label for="city" class="block text-gray-700 font-bold mb-2">Enter a City Name</label>
+                <input type="text" id="city" class="w-full p-2 border rounded mb-4" placeholder="E.g., New York, London, Tokyo">
+                <button id="search" class="w-full bg-blue-500 text-white p-2 rounded">Search</button>
+                <div class="text-center my-2">or</div>
+                <button id="current-location" class="w-full bg-gray-500 text-white p-2 rounded">Use Current Location</button>
+                <div id="recent-searches" class="mt-4 hidden">
+                    <label for="recent-cities" class="block text-gray-700 font-bold mb-2">Recently Searched Cities</label>
+                    <select id="recent-cities" class="w-full p-2 border rounded mb-4">
+                        <!-- Recently searched cities will be populated here -->
+                    </select>
+                </div>
+            </div>
+
+            <div id="weather-result" class="md:col-span-2 p-4 bg-blue-200 rounded-lg shadow-lg ">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold" id="city-name">Taranagar (6/30/2024)</h2>
+                        <div class="text-blue-700 mt-2" id="current-weather">
+                            <p>Temperature: <span id="temperature">36.6</span>°C</p>
+                            <p>Wind: <span id="wind">30</span> M/S</p>
+                            <p>Humidity: <span id="humidity">40</span>%</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div id="icon"><img src="https://openweathermap.org/img/wn/03d@2x.png" alt="scattered clouds"></div>
+                        <div id="description" class="text-blue-700 ml-2">scattered clouds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="forecast" class="mt-4 p-4 bg-white rounded-lg shadow-lg ">
+            <h3 class="text-lg font-bold">5-Day Forecast</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mt-4" id="forecast-cards">
+                <!-- Forecast cards will be injected here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
